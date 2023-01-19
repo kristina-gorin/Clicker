@@ -30,8 +30,13 @@ public class ItemController {
 
     @PostMapping()
     public Item addItem(@RequestBody Item item) {
+        if(item.getTitle().length()>10){
+            throw new IllegalArgumentException("Title should be less than 10 characters");
+        }
         return this.itemRepository.save(item);
     }
+
+
 
     @DeleteMapping("/{id}")
     public Item deleteItem(@PathVariable("id") Integer id) {
@@ -46,6 +51,9 @@ public class ItemController {
 
     @PutMapping("/{id}/title")
     public Item updateTitle(@PathVariable("id") Integer id, @RequestBody Item updatedItem) {
+        if(updatedItem.getTitle().length()>10){
+            throw new IllegalArgumentException("Title must be 10 characters or less");
+        }
         Optional<Item> itemOptional = this.itemRepository.findById(id);
         if (itemOptional.isEmpty()) {
             return null;
@@ -58,6 +66,9 @@ public class ItemController {
 
     @PutMapping("/{id}/notes")
     public Item updateNotes(@PathVariable("id") Integer id, @RequestBody Item updatedItem) {
+        if(updatedItem.getNotes().length()>280){
+            throw new IllegalArgumentException("Please shorten your note");
+        }
         Optional<Item> itemOptional = this.itemRepository.findById(id);
         if (itemOptional.isEmpty()) {
             return null;
