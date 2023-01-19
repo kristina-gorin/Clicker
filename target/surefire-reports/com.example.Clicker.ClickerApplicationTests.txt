@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: com.example.Clicker.ClickerApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.483 s <<< FAILURE! - in com.example.Clicker.ClickerApplicationTests
+contextLoads  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@3e84111a testClass = com.example.Clicker.ClickerApplicationTests, locations = [], classes = [com.example.Clicker.ClickerApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceLocations = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@a3d8174, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@120f102b, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5f9b2141, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@9da1, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@10d307f1, org.springframework.boot.test.context.SpringBootTestAnnotation@69ec2a8b], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+Caused by: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration.stringHttpMessageConverter
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.orm.jpa.SharedEntityManagerCreator] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@5b37e0d2]
+Caused by: java.lang.NoClassDefFoundError: jakarta/persistence/EntityManagerFactory
+Caused by: java.lang.ClassNotFoundException: jakarta.persistence.EntityManagerFactory
+

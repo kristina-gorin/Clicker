@@ -1,13 +1,14 @@
 package com.example.Clicker;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
+
+
+
+import jakarta.persistence.*;
+
+
 
 @Entity
-@Table(name="ITEMS")
+
 public class Item {
 
     @Id
